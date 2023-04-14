@@ -9,4 +9,9 @@ module.exports = (app) => {
     "/" + USERS_ROUTE_BASE_URL + "/registration",
     userController.registration
   );
+  app.post("/" + USERS_ROUTE_BASE_URL + "/login", userController.login);
+  app.post(
+    "/" + USERS_ROUTE_BASE_URL + "/resetPassword",
+    userController.resetPassword
+  );
 };
