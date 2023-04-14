@@ -1,1 +1,1 @@
-# restaurant-user-management
+User management module
