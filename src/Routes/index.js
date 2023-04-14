@@ -1,3 +1,3 @@
 module.exports = (app) => {
-  require("./userRoute");
+  require("./userRoute")(app);
 };

@@ -7,8 +7,8 @@ const path = require("path");
 
 require("dotenv").config();
 
-const port = process.env.PORT || 3000;
-
+const port = process.env.PORT || 3001;
+// const http = require("http").createServer(app);
 app.use(cors());
 app.use(
   bodyParser.urlencoded({
@@ -17,11 +17,12 @@ app.use(
     parameterLimit: 100000,
   })
 );
+app.use(bodyParser.json({ limit: "200mb" }));
 app.use((request, response, next) => {
   next();
 });
 
-require("./src/Routes");
+require("./src/Routes")(app);
 
 const jsn = { status: "User Management Server" };
 app.get("/*", (request, response) => {
